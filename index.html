@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Millie Bobby Brown | Official Portfolio & Showcase</title>
+  <meta name="description" content="Explore the official portfolio of Millie Bobby Brown. Biography, iconic character grids, filterable filmography, awards timeline, interviews, trailers, and more.">
+  
+  <!-- SVG Favicon using "MILLIE." -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cstyle%3Etext %7B font-family: 'Outfit', sans-serif%3B font-weight: 800%3B font-size: 24px%3B fill: %23111827%3B %7D @media (prefers-color-scheme: dark) %7B text %7B fill: %23FFFFFF%3B %7D %7D%3C/style%3E%3Ctext x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle'%3EMILLIE%3Ctspan fill='%23E50914'%3E.%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Millie Bobby Brown — Official Portfolio">
+  <meta property="og:description" content="Actress, Producer & UNICEF Goodwill Ambassador">
+  <meta property="og:image" content="assets/images/hero-bg.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark glass-panel" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="#home" id="brandLogo">MILLIE<span>.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" id="navbarTogglerBtn">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#home" id="navLinkHome">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#bio" id="navLinkBio">Biography</a></li>
+          <li class="nav-item"><a class="nav-link" href="#characters" id="navLinkCharacters">Characters</a></li>
+          <li class="nav-item"><a class="nav-link" href="#filmography" id="navLinkFilmography">Filmography</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery" id="navLinkGallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#awards" id="navLinkAwards">Awards</a></li>
+          <li class="nav-item"><a class="nav-link" href="#videos" id="navLinkVideos">Videos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" id="navLinkContact">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark/Light Mode">
+              <i class="fa-solid fa-sun" id="themeIcon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content text-center text-white">
+      <h1 class="hero-title animate-on-scroll appear" id="heroMainTitle">MILLIE BOBBY <span>BROWN</span></h1>
+      <p class="hero-subtitle" id="heroSubText">
+        Actor • Producer • <span id="typewriter"></span><span class="typed-cursor">|</span>
+      </p>
+      <div class="hero-btns mt-4" id="heroButtonContainer">
+        <a href="#bio" class="btn btn-primary-accent me-3" id="heroBtnExplore">Explore Profile</a>
+        <a href="#contact" class="btn btn-outline-custom" id="heroBtnContact">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Bar -->
+  <section class="container stats-bar" id="statsSection">
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-3">
+        <div class="stat-item glass-panel" id="statBoxBoxOffice">
+          <div class="stat-num" data-target="1200">$0M+</div>
+          <div class="stat-label">Box Office ($1.2B)</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item glass-panel" id="statBoxProjects">
+          <div class="stat-num" data-target="25">0</div>
+          <div class="stat-label">Projects</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item glass-panel" id="statBoxAwards">
+          <div class="stat-num" data-target="18">0</div>
+          <div class="stat-label">Awards Won</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item glass-panel" id="statBoxAmbassador">
+          <div class="stat-num" data-target="14">0</div>
+          <div class="stat-label">UNICEF Ambassador Age</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Biography Section -->
+  <section class="section-padding container" id="bio">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 animate-on-scroll" id="bioImageCol">
+        <div class="bio-image-wrapper">
+          <img src="assets/images/bio-img.png" alt="Millie Bobby Brown professional portrait showcase" class="bio-img" id="bioPortraitImage" loading="lazy">
+        </div>
+      </div>
+      <div class="col-lg-7 bio-details animate-on-scroll" id="bioTextCol">
+        <h2 class="section-title" id="bioTitle">Biography</h2>
+        <p class="section-subtitle" id="bioSub">Her journey from rising star to global powerhouse.</p>
+        <p>
+          Born on February 19, 2004, <span class="highlight-text">Millie Bobby Brown</span> is a British actress and producer who quickly became one of Hollywood's most prominent young talents. She rose to international fame for her breakout role as <span class="highlight-text">Eleven</span> in Netflix’s critically acclaimed science fiction series <span class="highlight-text">Stranger Things</span>, earning two Emmy Award nominations.
+        </p>
+        <p>
+          Beyond Hawkins, Millie has shown her versatility as a leading actress and producer. She starred as the titular character in the hit mystery films <span class="highlight-text">Enola Holmes</span> and its sequel, and took on the role of Princess Elodie in the dark fantasy action thriller <span class="highlight-text">Damsel</span>. 
+        </p>
+        <p>
+          In 2018, at just 14 years old, she was appointed the youngest-ever <span class="highlight-text">UNICEF Goodwill Ambassador</span>, using her global platform to advocate for children's rights, education, and anti-bullying awareness. In addition to her philanthropy and acting, she is the founder of <span class="highlight-text">Florence by Mills</span>, a clean and conscious beauty brand designed for Gen-Z.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Florence by Mills Brand Section -->
+  <section class="section-padding florence-brand-section" id="florence">
+    <div class="container">
+      <div class="text-center animate-on-scroll" id="florenceHeader">
+        <h2 class="section-title">Florence by Mills</h2>
+        <p class="section-subtitle mx-auto">Clean beauty, built for Gen Z.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center" id="florenceGrid">
+        <!-- Pillar 1 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="florence-card glass-panel-pastel">
+            <div class="florence-icon"><i class="fa-solid fa-leaf"></i></div>
+            <h3 class="florence-title">100% Vegan</h3>
+            <p class="florence-desc">Every product is cruelty-free and vegan certified.</p>
+          </div>
+        </div>
+        <!-- Pillar 2 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="florence-card glass-panel-pastel">
+            <div class="florence-icon"><i class="fa-solid fa-heart"></i></div>
+            <h3 class="florence-title">For Gen Z</h3>
+            <p class="florence-desc">Affordable, inclusive beauty for all skin types and tones.</p>
+          </div>
+        </div>
+        <!-- Pillar 3 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="florence-card glass-panel-pastel">
+            <div class="florence-icon"><i class="fa-solid fa-star"></i></div>
+            <h3 class="florence-title">Founded at 17</h3>
+            <p class="florence-desc">Millie launched her own beauty brand at just 17 years old.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 animate-on-scroll" id="florenceCta">
+        <a href="https://florencebymills.com" target="_blank" class="btn btn-florence">Visit Florence by Mills</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Humanitarian Work Section -->
+  <section class="section-padding unicef-section" id="humanitarian">
+    <div class="container">
+      <div class="text-center animate-on-scroll" id="unicefHeader">
+        <h2 class="section-title">UNICEF Goodwill Ambassador</h2>
+        <p class="section-subtitle mx-auto">Advocating for children's rights since 2018.</p>
+      </div>
+
+      <div class="row align-items-center g-5 mt-3">
+        <!-- Left Column: Impact Stats -->
+        <div class="col-lg-5 animate-on-scroll" id="unicefStatsCol">
+          <div class="unicef-stats-panel glass-panel-blue">
+            <div class="unicef-stat-item">
+              <div class="unicef-stat-num">2018</div>
+              <div class="unicef-stat-label">Year Appointed (Youngest ever at age 14)</div>
+            </div>
+            <div class="unicef-stat-item">
+              <div class="unicef-stat-num">190+</div>
+              <div class="unicef-stat-label">Countries UNICEF operates in</div>
+            </div>
+            <div class="unicef-stat-item">
+              <div class="unicef-stat-num">1B+</div>
+              <div class="unicef-stat-label">Children reached through programs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Editorial & Tags -->
+        <div class="col-lg-7 animate-on-scroll" id="unicefTextCol">
+          <div class="unicef-editorial">
+            <p>
+              As UNICEF's youngest-ever Goodwill Ambassador, Millie Bobby Brown uses her global platform to speak out on issues affecting youth worldwide. From addressing world leaders at the United Nations Headquarters to visiting field programs, she remains a passionate advocate for bringing positive change, safety, and empowerment to the next generation.
+            </p>
+            <p class="mb-4">
+              Her advocacy focuses on ensuring every child has access to quality education, raising awareness around youth mental health, and fighting online bullying and discrimination to establish true gender equality.
+            </p>
+            <div class="cause-tags mb-5">
+              <span class="cause-badge">Child Education</span>
+              <span class="cause-badge">Mental Health Awareness</span>
+              <span class="cause-badge">Gender Equality</span>
+            </div>
+            <a href="https://www.unicef.org" target="_blank" class="btn btn-unicef">Learn More at UNICEF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Characters Section -->
+  <section class="section-padding bg-secondary-wrap" id="characters" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="text-center animate-on-scroll" id="charactersHeader">
+        <h2 class="section-title">Iconic Characters</h2>
+        <p class="section-subtitle mx-auto">Hover over the cards to explore Millie Bobby Brown's most famous roles.</p>
+      </div>
+      
+      <div class="row g-4" id="charactersGridContainer">
+        <!-- Eleven -->
+        <div class="col-md-6 col-lg-3 animate-on-scroll">
+          <div class="character-card" id="charCardEleven">
+            <div class="character-img-bg" style="background-image: url('assets/images/char-eleven-new.png');"></div>
+            <div class="character-overlay">
+              <h3 class="character-role">Eleven / <span>011</span></h3>
+              <div class="character-show">Stranger Things</div>
+              <p class="character-description">A psychokinetic girl raised in Hawkins Lab, who loves Eggo waffles and defends her friends from the Upside Down.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Enola Holmes -->
+        <div class="col-md-6 col-lg-3 animate-on-scroll">
+          <div class="character-card" id="charCardEnola">
+            <div class="character-img-bg" style="background-image: url('assets/images/char-enola-new.jpg');"></div>
+            <div class="character-overlay">
+              <h3 class="character-role">Enola <span>Holmes</span></h3>
+              <div class="character-show">Enola Holmes (1 & 2)</div>
+              <p class="character-description">Sherlock's brilliant, direct-to-camera-speaking younger sister who is a master of disguise and a skilled martial artist.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Princess Elodie -->
+        <div class="col-md-6 col-lg-3 animate-on-scroll">
+          <div class="character-card" id="charCardElodie">
+            <div class="character-img-bg" style="background-image: url('assets/images/char-elodie-new.jpg');"></div>
+            <div class="character-overlay">
+              <h3 class="character-role">Princess <span>Elodie</span></h3>
+              <div class="character-show">Damsel</div>
+              <p class="character-description">A strong-willed royal who fights to survive inside a dragon's lair after discovering she was meant to be sacrificed.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Madison Russell -->
+        <div class="col-md-6 col-lg-3 animate-on-scroll">
+          <div class="character-card" id="charCardMadison">
+            <div class="character-img-bg" style="background-image: url('assets/images/char-madison-new.png');"></div>
+            <div class="character-overlay">
+              <h3 class="character-role">Madison <span>Russell</span></h3>
+              <div class="character-show">Godzilla Franchise</div>
+              <p class="character-description">The courageous daughter of Monarch scientists, who risks her life to stand up for Godzilla and stop rogue organizations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filmography Section -->
+  <section class="section-padding container" id="filmography">
+    <div class="text-center animate-on-scroll" id="filmographyHeader">
+      <h2 class="section-title">Filmography</h2>
+      <p class="section-subtitle mx-auto">Filter and explore her major film and television productions.</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-btn-container animate-on-scroll" id="filmographyFilters">
+      <button class="filter-btn active" data-filter="all" id="btnFilterAll">All Projects</button>
+      <button class="filter-btn" data-filter="movie" id="btnFilterMovies">Movies</button>
+      <button class="filter-btn" data-filter="tv" id="btnFilterTV">TV Shows</button>
+    </div>
+
+    <!-- Filmography Cards -->
+    <div class="row g-4" id="filmographyGrid">
+      <!-- Stranger Things -->
+      <div class="col-md-6 col-lg-4 film-item animate-on-scroll" data-category="tv" id="filmItemStrangerThings">
+        <div class="movie-card">
+          <div class="movie-poster-wrap">
+            <img src="assets/images/poster-stranger-things.jpg" alt="Stranger Things Season 1 official series poster featuring Millie Bobby Brown as Eleven" loading="lazy">
+            <span class="movie-year-badge">2016 - Pres</span>
+          </div>
+          <div class="movie-info">
+            <h3 class="movie-title">Stranger Things</h3>
+            <span class="movie-role">Eleven (Lead Role)</span>
+            <p class="movie-desc">When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Enola Holmes -->
+      <div class="col-md-6 col-lg-4 film-item animate-on-scroll" data-category="movie" id="filmItemEnola1">
+        <div class="movie-card">
+          <div class="movie-poster-wrap">
+            <img src="assets/images/poster-enola-holmes.jpg" alt="Enola Holmes official movie poster featuring Millie Bobby Brown" loading="lazy">
+            <span class="movie-year-badge">2020</span>
+          </div>
+          <div class="movie-info">
+            <h3 class="movie-title">Enola Holmes</h3>
+            <span class="movie-role">Enola Holmes (Lead & Producer)</span>
+            <p class="movie-desc">While searching for her missing mother, intrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runaway lord.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Damsel -->
+      <div class="col-md-6 col-lg-4 film-item animate-on-scroll" data-category="movie" id="filmItemDamsel">
+        <div class="movie-card">
+          <div class="movie-poster-wrap">
+            <img src="assets/images/poster-damsel.jpg" alt="Damsel official dark fantasy movie poster starring Millie Bobby Brown" loading="lazy">
+            <span class="movie-year-badge">2024</span>
+          </div>
+          <div class="movie-info">
+            <h3 class="movie-title">Damsel</h3>
+            <span class="movie-role">Princess Elodie (Lead & Executive Producer)</span>
+            <p class="movie-desc">A young woman agrees to marry a handsome prince, only to discover she has been thrown into a cave as a sacrifice to a fire-breathing dragon.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Enola Holmes 2 -->
+      <div class="col-md-6 col-lg-4 film-item animate-on-scroll" data-category="movie" id="filmItemEnola2">
+        <div class="movie-card">
+          <div class="movie-poster-wrap">
+            <img src="assets/images/poster-enola-holmes-2.png" alt="Enola Holmes 2 movie poster featuring Millie Bobby Brown in detective attire" loading="lazy">
+            <span class="movie-year-badge">2022</span>
+          </div>
+          <div class="movie-info">
+            <h3 class="movie-title">Enola Holmes 2</h3>
+            <span class="movie-role">Enola Holmes (Lead & Producer)</span>
+            <p class="movie-desc">Now a detective-for-hire, Enola takes on her first official case to find a missing girl, as the sparks of a dangerous conspiracy ignite a mystery.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Godzilla: King of the Monsters -->
+      <div class="col-md-6 col-lg-4 film-item animate-on-scroll" data-category="movie" id="filmItemGodzilla1">
+        <div class="movie-card">
+          <div class="movie-poster-wrap">
+            <img src="assets/images/poster-godzilla-kotm.png" alt="Godzilla: King of the Monsters movie poster featuring Madison Russell" loading="lazy">
+            <span class="movie-year-badge">2019</span>
+          </div>
+          <div class="movie-info">
+            <h3 class="movie-title">Godzilla: King of the Monsters</h3>
+            <span class="movie-role">Madison Russell (Supporting Role)</span>
+            <p class="movie-desc">The crypto-zoological agency Monarch faces off against a battery of god-sized monsters, including the mighty Godzilla, who collides with Mothra, Rodan, and King Ghidorah.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Godzilla vs. Kong -->
+      <div class="col-md-6 col-lg-4 film-item animate-on-scroll" data-category="movie" id="filmItemGodzilla2">
+        <div class="movie-card">
+          <div class="movie-poster-wrap">
+            <img src="assets/images/poster-godzilla-vs-kong.png" alt="Godzilla vs. Kong epic battle movie poster" loading="lazy">
+            <span class="movie-year-badge">2021</span>
+          </div>
+          <div class="movie-info">
+            <h3 class="movie-title">Godzilla vs. Kong</h3>
+            <span class="movie-role">Madison Russell (Supporting Role)</span>
+            <p class="movie-desc">The epic next chapter in the cinematic Monsterverse pits two of the greatest icons in motion picture history against one another, with humans caught in the middle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Photo Gallery -->
+  <section class="section-padding bg-secondary-wrap" id="gallery" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="text-center animate-on-scroll" id="galleryHeader">
+        <h2 class="section-title">Photo Gallery</h2>
+        <p class="section-subtitle mx-auto">Explore snapshots from red carpets, photoshoots, and behind-the-scenes moments.</p>
+      </div>
+
+      <!-- Gallery Filter Buttons -->
+      <div class="filter-btn-container animate-on-scroll" id="galleryFilters">
+        <button class="filter-btn gallery-filter-btn active" data-filter="all" id="btnGalleryFilterAll">All</button>
+        <button class="filter-btn gallery-filter-btn" data-filter="red-carpet" id="btnGalleryFilterRedCarpet">Red Carpet</button>
+        <button class="filter-btn gallery-filter-btn" data-filter="characters" id="btnGalleryFilterCharacters">Characters</button>
+        <button class="filter-btn gallery-filter-btn" data-filter="behind-the-scenes" id="btnGalleryFilterBehindTheScenes">Behind the Scenes</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGridContainer">
+        <!-- Gallery 1 -->
+        <div class="gallery-item animate-on-scroll" data-src="assets/images/bio-img.png" data-caption="Millie Bobby Brown Portrait Showcase" id="galleryItem1" data-category="red-carpet">
+          <img src="assets/images/bio-img.png" alt="Millie Bobby Brown smiling professional portrait" loading="lazy">
+          <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <!-- Gallery 2 -->
+        <div class="gallery-item animate-on-scroll" data-src="assets/images/char-eleven-new.png" data-caption="Eleven - Stranger Things Series" id="galleryItem2" data-category="characters">
+          <img src="assets/images/char-eleven-new.png" alt="Millie Bobby Brown as Eleven with psychokinetic pose in Stranger Things" loading="lazy">
+          <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <!-- Gallery 3 -->
+        <div class="gallery-item animate-on-scroll" data-src="assets/images/char-enola-new.jpg" data-caption="Enola Holmes - Detective Portrait" id="galleryItem3" data-category="characters">
+          <img src="assets/images/char-enola-new.jpg" alt="Millie Bobby Brown as Enola Holmes holding a magnifying glass in detective theme" loading="lazy">
+          <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <!-- Gallery 4 -->
+        <div class="gallery-item animate-on-scroll" data-src="assets/images/char-elodie-new.jpg" data-caption="Princess Elodie - Damsel Action Scene" id="galleryItem4" data-category="characters">
+          <img src="assets/images/char-elodie-new.jpg" alt="Millie Bobby Brown as Princess Elodie armed with a sword in Damsel action scene" loading="lazy">
+          <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <!-- Gallery 5 -->
+        <div class="gallery-item animate-on-scroll" data-src="assets/images/char-madison-new.png" data-caption="Madison Russell - Godzilla Franchise" id="galleryItem5" data-category="behind-the-scenes">
+          <img src="assets/images/char-madison-new.png" alt="Millie Bobby Brown as Madison Russell looking concerned in Godzilla movie scene" loading="lazy">
+          <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <!-- Gallery 6 -->
+        <div class="gallery-item animate-on-scroll" data-src="assets/images/poster-stranger-things.jpg" data-caption="Stranger Things Season 1 Poster Artwork" id="galleryItem6" data-category="behind-the-scenes">
+          <img src="assets/images/poster-stranger-things.jpg" alt="Stranger Things Season 1 vintage artwork poster" loading="lazy">
+          <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Section -->
+  <section class="section-padding container" id="awards">
+    <div class="text-center animate-on-scroll" id="awardsHeader">
+      <h2 class="section-title">Awards & Milestones</h2>
+      <p class="section-subtitle mx-auto">A timeline of major career accolades and landmark achievements.</p>
+    </div>
+
+    <div class="timeline" id="awardsTimeline">
+      <!-- 2017 Ensemble Won -->
+      <div class="timeline-item left-item animate-on-scroll" id="timelineItem1">
+        <div class="timeline-card glass-panel">
+          <div class="timeline-year">2017</div>
+          <h4 class="timeline-title">Screen Actors Guild Awards</h4>
+          <span class="timeline-category">Outstanding Ensemble in a Drama Series</span>
+          <div class="timeline-status"><i class="fa-solid fa-circle-check"></i> Won (Stranger Things)</div>
+        </div>
+      </div>
+      <!-- 2017 Emmy Nom -->
+      <div class="timeline-item right-item animate-on-scroll" id="timelineItem2">
+        <div class="timeline-card glass-panel">
+          <div class="timeline-year">2017</div>
+          <h4 class="timeline-title">Primetime Emmy Awards</h4>
+          <span class="timeline-category">Outstanding Supporting Actress in a Drama Series</span>
+          <div class="timeline-status"><i class="fa-solid fa-circle-check"></i> Nominated (Stranger Things)</div>
+        </div>
+      </div>
+      <!-- 2018 Youngest UNICEF -->
+      <div class="timeline-item left-item animate-on-scroll" id="timelineItem3">
+        <div class="timeline-card glass-panel">
+          <div class="timeline-year">2018</div>
+          <h4 class="timeline-title">UNICEF Goodwill Ambassador</h4>
+          <span class="timeline-category">Global Child Advocacy and Rights Campaign</span>
+          <div class="timeline-status"><i class="fa-solid fa-circle-check"></i> Appointed (Youngest Ever at Age 14)</div>
+        </div>
+      </div>
+      <!-- 2018 Time 100 -->
+      <div class="timeline-item right-item animate-on-scroll" id="timelineItem4">
+        <div class="timeline-card glass-panel">
+          <div class="timeline-year">2018</div>
+          <h4 class="timeline-title">Time 100 Most Influential People</h4>
+          <span class="timeline-category">Featured in Time Magazine's Annual List</span>
+          <div class="timeline-status"><i class="fa-solid fa-circle-check"></i> Recognized (Youngest honoree)</div>
+        </div>
+      </div>
+      <!-- 2020 Kids Choice Won -->
+      <div class="timeline-item left-item animate-on-scroll" id="timelineItem5">
+        <div class="timeline-card glass-panel">
+          <div class="timeline-year">2020</div>
+          <h4 class="timeline-title">Nickelodeon Kids' Choice Awards</h4>
+          <span class="timeline-category">Favorite Female TV Star</span>
+          <div class="timeline-status"><i class="fa-solid fa-circle-check"></i> Won (Stranger Things)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- As Seen In Section -->
+  <section class="section-padding bg-dark-banner" id="press" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="text-center animate-on-scroll" id="pressHeader">
+        <h2 class="section-title">As Seen In</h2>
+        <p class="section-subtitle mx-auto">Featured coverage and quotes from global press outlets.</p>
+      </div>
+
+      <!-- Auto-scrolling Marquee of Outlets -->
+      <div class="marquee-wrapper animate-on-scroll">
+        <div class="marquee-track">
+          <div class="marquee-item">TIME Magazine</div>
+          <div class="marquee-item">Vogue</div>
+          <div class="marquee-item">Netflix</div>
+          <div class="marquee-item">UNICEF</div>
+          <div class="marquee-item">Forbes</div>
+          <div class="marquee-item">Entertainment Weekly</div>
+          <div class="marquee-item">Variety</div>
+          <!-- Repeat items for continuous infinite scroll -->
+          <div class="marquee-item">TIME Magazine</div>
+          <div class="marquee-item">Vogue</div>
+          <div class="marquee-item">Netflix</div>
+          <div class="marquee-item">UNICEF</div>
+          <div class="marquee-item">Forbes</div>
+          <div class="marquee-item">Entertainment Weekly</div>
+          <div class="marquee-item">Variety</div>
+        </div>
+      </div>
+
+      <!-- Rotating Quotes Container -->
+      <div class="quotes-slider-container animate-on-scroll">
+        <!-- Quote 1 -->
+        <div class="quote-card glass-panel active" data-quote-index="0">
+          <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="quote-text">"One of the 100 most influential people in the world."</p>
+          <div class="quote-author">— TIME Magazine</div>
+        </div>
+        <!-- Quote 2 -->
+        <div class="quote-card glass-panel" data-quote-index="1">
+          <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="quote-text">"A force of nature on and off screen."</p>
+          <div class="quote-author">— Vogue</div>
+        </div>
+        <!-- Quote 3 -->
+        <div class="quote-card glass-panel" data-quote-index="2">
+          <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="quote-text">"A generation-defining talent."</p>
+          <div class="quote-author">— Variety</div>
+        </div>
+        
+        <!-- Slider Indicators -->
+        <div class="quote-dots">
+          <span class="quote-dot active" data-quote-dot="0"></span>
+          <span class="quote-dot" data-quote-dot="1"></span>
+          <span class="quote-dot" data-quote-dot="2"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Showcase Section -->
+  <section class="section-padding bg-secondary-wrap" id="videos" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="text-center animate-on-scroll" id="videosHeader">
+        <h2 class="section-title">Video Showcase</h2>
+        <p class="section-subtitle mx-auto">Watch trailers of her notable projects and high-profile interviews.</p>
+      </div>
+
+      <!-- Video Tabs Pills -->
+      <ul class="nav nav-pills nav-pills-custom justify-content-center animate-on-scroll" id="videoTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-trailers-tab" data-bs-toggle="pill" data-bs-target="#pills-trailers" type="button" role="tab" aria-controls="pills-trailers" aria-selected="true">Trailers</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-interviews-tab" data-bs-toggle="pill" data-bs-target="#pills-interviews" type="button" role="tab" aria-controls="pills-interviews" aria-selected="false">Interviews</button>
+        </li>
+      </ul>
+
+      <!-- Tab Content Panels -->
+      <div class="tab-content" id="videoTabsContent">
+        <!-- Trailers Tab -->
+        <div class="tab-pane fade show active" id="pills-trailers" role="tabpanel" aria-labelledby="pills-trailers-tab">
+          <div class="row g-4 justify-content-center" id="trailersGrid">
+            <div class="col-lg-4 animate-on-scroll">
+              <h5 class="text-center mb-3">Stranger Things Season 4</h5>
+              <div class="video-wrap">
+                <a href="https://www.youtube.com/watch?v=b9EkMc79ZSU" target="_blank" class="video-link-wrapper">
+                  <img src="https://img.youtube.com/vi/b9EkMc79ZSU/maxresdefault.jpg" alt="Stranger Things Season 4 official trailer video thumbnail featuring the Hawkins cast" class="video-thumbnail" loading="lazy">
+                  <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 animate-on-scroll">
+              <h5 class="text-center mb-3">Damsel (Official)</h5>
+              <div class="video-wrap">
+                <a href="https://www.youtube.com/watch?v=iM150ZWovZM" target="_blank" class="video-link-wrapper">
+                  <img src="https://img.youtube.com/vi/iM150ZWovZM/maxresdefault.jpg" alt="Damsel official movie trailer video thumbnail featuring Princess Elodie" class="video-thumbnail" loading="lazy">
+                  <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 animate-on-scroll">
+              <h5 class="text-center mb-3">Enola Holmes</h5>
+              <div class="video-wrap">
+                <a href="https://www.youtube.com/watch?v=1d0Zf9sXlHk" target="_blank" class="video-link-wrapper">
+                  <img src="https://img.youtube.com/vi/1d0Zf9sXlHk/maxresdefault.jpg" alt="Enola Holmes official trailer video thumbnail featuring Enola and Sherlock" class="video-thumbnail" loading="lazy">
+                  <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interviews Tab -->
+        <div class="tab-pane fade" id="pills-interviews" role="tabpanel" aria-labelledby="pills-interviews-tab">
+          <div class="row g-4 justify-content-center" id="interviewsGrid">
+            <div class="col-lg-6 animate-on-scroll">
+              <h5 class="text-center mb-3">Wired Autocomplete Interview</h5>
+              <div class="video-wrap">
+                <a href="https://www.youtube.com/watch?v=9VpJ5ci5zcw" target="_blank" class="video-link-wrapper">
+                  <img src="https://img.youtube.com/vi/9VpJ5ci5zcw/maxresdefault.jpg" alt="Millie Bobby Brown WIRED Autocomplete Interview video thumbnail" class="video-thumbnail" loading="lazy">
+                  <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-6 animate-on-scroll">
+              <h5 class="text-center mb-3">The Tonight Show Starring Jimmy Fallon</h5>
+              <div class="video-wrap">
+                <a href="https://www.youtube.com/watch?v=xJJQGC0cnxo" target="_blank" class="video-link-wrapper">
+                  <img src="https://img.youtube.com/vi/xJJQGC0cnxo/maxresdefault.jpg" alt="Millie Bobby Brown True Confessions segment on The Tonight Show Starring Jimmy Fallon video thumbnail" class="video-thumbnail" loading="lazy">
+                  <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fun Facts Section (Accordion) -->
+  <section class="section-padding container" id="faq">
+    <div class="text-center animate-on-scroll" id="faqHeader">
+      <h2 class="section-title">Fun Facts</h2>
+      <p class="section-subtitle mx-auto">Get answers to the most popular inquiries about Millie's background and projects.</p>
+    </div>
+
+    <div class="row justify-content-center" id="faqAccordionContainer">
+      <div class="col-lg-8 animate-on-scroll">
+        <div class="accordion" id="funFactsAccordion">
+          <!-- Accordion 1 -->
+          <div class="accordion-item" id="accordionItemBirth">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="btnAccordionBirth">
+                Where and when was Millie Bobby Brown born?
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#funFactsAccordion">
+              <div class="accordion-body">
+                Millie Bobby Brown was born on February 19, 2004, in Marbella, Andalusia, Spain. She is the third of four children born to British parents, Kelly and Robert Brown. The family moved back to the UK when she was four years old and later relocated to Orlando, Florida.
+              </div>
+            </div>
+          </div>
+          <!-- Accordion 2 -->
+          <div class="accordion-item" id="accordionItemUnicef">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="btnAccordionUnicef">
+                What is her relation to UNICEF?
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#funFactsAccordion">
+              <div class="accordion-body">
+                On World Children's Day in November 2018, Millie was appointed as a UNICEF Goodwill Ambassador at the age of 14, making her the youngest person ever to receive this title. She uses her voice to address bullying, rights to education, safety, and empowerment.
+              </div>
+            </div>
+          </div>
+          <!-- Accordion 3 -->
+          <div class="accordion-item" id="accordionItemFlorence">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="btnAccordionFlorence">
+                What is Florence by Mills?
+              </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#funFactsAccordion">
+              <div class="accordion-body">
+                Florence by Mills is Millie's clean, vegan, and cruelty-free beauty, skincare, and hair care line launched in 2019. Named after her great-grandmother Florence, the brand's philosophy focuses on self-expression, beauty self-care, and toxic-free, accessible ingredients for Gen-Z.
+              </div>
+            </div>
+          </div>
+          <!-- Accordion 4 -->
+          <div class="accordion-item" id="accordionItemStunts">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="btnAccordionStunts">
+                Did she do her own stunts in the film Damsel?
+              </button>
+            </h3>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#funFactsAccordion">
+              <div class="accordion-body">
+                Yes! Millie took on extensive physical training and performed a major portion of her own action stunts in the 2024 Netflix film Damsel. She mentioned in interviews that she wanted her character, Princess Elodie's survival struggles, to feel highly raw and authentic.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest News Section -->
+  <section class="section-padding bg-secondary-wrap" id="press-news" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="text-center animate-on-scroll" id="pressNewsHeader">
+        <h2 class="section-title">In The Press</h2>
+        <p class="section-subtitle mx-auto">Stay up to date with the latest editorial coverage and announcements.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center" id="pressNewsGrid">
+        <!-- Article 1 -->
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="press-news-card glass-panel">
+            <div class="press-news-source-wrap">
+              <span class="source-tag source-netflix">Netflix</span>
+              <span class="press-news-date">March 2024</span>
+            </div>
+            <h3 class="press-news-headline">Damsel breaks Netflix viewing records in opening weekend</h3>
+            <p class="press-news-desc">Millie Bobby Brown's dark fantasy thriller captures audiences worldwide, landing the number one spot in over 90 countries.</p>
+            <a href="https://netflix.com" target="_blank" class="press-news-link">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="press-news-card glass-panel">
+            <div class="press-news-source-wrap">
+              <span class="source-tag source-time">TIME Magazine</span>
+              <span class="press-news-date">April 2024</span>
+            </div>
+            <h3 class="press-news-headline">Millie Bobby Brown named to TIME100 Next list again</h3>
+            <p class="press-news-desc">Recognized for her dual impact as a generation-defining actress and a passionate global children's rights advocate.</p>
+            <a href="https://time.com" target="_blank" class="press-news-link">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="press-news-card glass-panel">
+            <div class="press-news-source-wrap">
+              <span class="source-tag source-vogue">Vogue</span>
+              <span class="press-news-date">June 2024</span>
+            </div>
+            <h3 class="press-news-headline">Florence by Mills expands to Sephora across 10 new countries</h3>
+            <p class="press-news-desc">The clean Gen-Z beauty brand continues its massive international retail growth, expanding accessible beauty to millions.</p>
+            <a href="https://vogue.com" target="_blank" class="press-news-link">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 animate-on-scroll" id="pressNewsCta">
+        <a href="#press" class="btn btn-outline-custom">View All Press</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Details Section -->
+  <section class="section-padding container" id="contact">
+    <div class="row g-5">
+      <!-- Info Col -->
+      <div class="col-lg-5 animate-on-scroll" id="contactInfoCol">
+        <div class="contact-info-card glass-panel">
+          <h2 class="section-title mb-4">Contact Details</h2>
+          <p class="mb-5 text-secondary">For professional inquiries, media requests, and official collaborations, please reach out via the form or contacts below.</p>
+          
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-text">
+              <h5>Email Address</h5>
+              <p>contact@milliebobbybrown.com</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="fa-solid fa-building"></i></div>
+            <div class="contact-text">
+              <h5>Talent Representation</h5>
+              <p>PCMA Management & Productions</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contact-text">
+              <h5>Location Profile</h5>
+              <p>London, UK / Atlanta, GA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Col -->
+      <div class="col-lg-7 animate-on-scroll" id="contactFormCol">
+        <div class="contact-form-card glass-panel">
+          <h2 class="section-title mb-4">Send a Message</h2>
+          <form id="contactForm">
+            <div class="row g-3">
+              <div class="col-md-6 form-group">
+                <label for="contactName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="contactName" placeholder="Enter name" required>
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="contactEmail" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="contactEmail" placeholder="Enter email" required>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <label for="contactSubject" class="form-label">Subject</label>
+              <input type="text" class="form-control" id="contactSubject" placeholder="Enter subject" required>
+            </div>
+            <div class="form-group mt-3">
+              <label for="contactMessage" class="form-label">Message Details</label>
+              <textarea class="form-control" id="contactMessage" rows="5" placeholder="Write message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary-accent w-100 mt-4" id="btnSubmitContact">Send Message</button>
+          </form>
+          
+          <!-- Success Alert Placeholder -->
+          <div class="alert alert-success d-none mt-3" role="alert" id="contactFormSuccessAlert">
+            <i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent successfully. We will be in touch shortly.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="mainFooter">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Logo/Desc Col -->
+        <div class="col-lg-5" id="footerLogoCol">
+          <div class="footer-logo">MILLIE<span>.</span></div>
+          <p class="footer-desc">A premium portfolio exploring the creative milestones, iconic roles, and humanitarian endeavors of Millie Bobby Brown.</p>
+          <div class="social-links">
+            <a href="https://instagram.com/milliebobbybrown" target="_blank" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com/milliebbrown" target="_blank" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://facebook.com/milliebobbybrown" target="_blank" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://youtube.com" target="_blank" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Links Col -->
+        <div class="col-6 col-lg-3" id="footerLinksCol1">
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#bio">Biography</a></li>
+            <li><a href="#characters">Characters</a></li>
+            <li><a href="#filmography">Filmography</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-4" id="footerLinksCol2">
+          <h4 class="footer-title">Showcase</h4>
+          <ul class="footer-links">
+            <li><a href="#gallery">Photo Gallery</a></li>
+            <li><a href="#awards">Awards & Milestones</a></li>
+            <li><a href="#videos">Video Trailers</a></li>
+            <li><a href="#contact">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom text-center">
+        <p class="mb-0">&copy; 2026 Millie Bobby Brown Official Portfolio. Built with premium design systems. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Overlay Container -->
+  <div class="custom-lightbox" id="galleryLightbox">
+    <div class="lightbox-index" id="lightboxIndexText">1 / 6</div>
+    <div class="lightbox-content-wrapper">
+      <button class="lightbox-close" id="lightboxCloseBtn" aria-label="Close lightbox"><i class="fa-solid fa-xmark"></i></button>
+      <button class="lightbox-btn lightbox-prev" id="lightboxPrevBtn" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+      <img src="" alt="Enlarged Millie Bobby Brown gallery photo in lightbox view" class="lightbox-img" id="lightboxActiveImage" loading="lazy">
+      <button class="lightbox-btn lightbox-next" id="lightboxNextBtn" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="lightbox-caption" id="lightboxCaptionText">Image Caption Here</div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

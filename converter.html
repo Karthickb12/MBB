@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Converter & Optimizer</title>
+    <style>
+        body { font-family: sans-serif; background: #121212; color: #fff; padding: 20px; }
+        .log-item { margin: 5px 0; padding: 5px; border-radius: 4px; background: #222; }
+        .success { border-left: 4px solid #4caf50; }
+        .error { border-left: 4px solid #f44336; }
+        textarea { width: 100%; height: 60px; background: #333; color: #fff; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Optimizing and Converting Image Assets to DOM Base64...</h1>
+    <div id="log"></div>
+    <div id="results"></div>
+
+    <script>
+        const logDiv = document.getElementById('log');
+        const resultsDiv = document.getElementById('results');
+        
+        function log(msg, type='info') {
+            const item = document.createElement('div');
+            item.className = `log-item ${type}`;
+            item.innerText = msg;
+            logDiv.appendChild(item);
+            console.log(msg);
+        }
+
+        function addResult(filename, base64Data) {
+            const heading = document.createElement('h3');
+            heading.innerText = filename;
+            resultsDiv.appendChild(heading);
+            
+            const txt = document.createElement('textarea');
+            txt.className = 'base64-result';
+            txt.setAttribute('data-filename', filename);
+            txt.innerText = base64Data;
+            resultsDiv.appendChild(txt);
+        }
+
+        const jobs = [
+            { src: 'assets/images/bio-img.png', destWebp: 'bio-img.webp', destFallback: 'bio-img.png', w: 1200, h: 1600, ratio: 3/4, mime: 'image/png' },
+            { src: 'assets/images/hero-bg.jpg', destWebp: 'hero-bg.webp', destFallback: 'hero-bg.jpg', w: 1920, h: 1080, ratio: 16/9, mime: 'image/jpeg' },
+            
+            // Characters
+            { src: 'assets/images/char-eleven-new.png', destWebp: 'char-eleven.webp', destFallback: 'char-eleven.png', w: 1200, h: 1600, ratio: 3/4, mime: 'image/png' },
+            { src: 'assets/images/char-enola-new.jpg', destWebp: 'char-enola.webp', destFallback: 'char-enola.jpg', w: 1200, h: 1600, ratio: 3/4, mime: 'image/jpeg' },
+            { src: 'assets/images/char-elodie-new.jpg', destWebp: 'char-elodie.webp', destFallback: 'char-elodie.jpg', w: 1200, h: 1600, ratio: 3/4, mime: 'image/jpeg' },
+            { src: 'assets/images/char-madison-new.png', destWebp: 'char-madison.webp', destFallback: 'char-madison.png', w: 1200, h: 1600, ratio: 3/4, mime: 'image/png' },
+            
+            // Posters
+            { src: 'assets/images/poster-stranger-things.jpg', destWebp: 'poster-stranger-things.webp', destFallback: 'poster-stranger-things.jpg', w: 800, h: 1200, ratio: 2/3, mime: 'image/jpeg' },
+            { src: 'assets/images/poster-enola-holmes.jpg', destWebp: 'poster-enola-holmes.webp', destFallback: 'poster-enola-holmes.jpg', w: 800, h: 1200, ratio: 2/3, mime: 'image/jpeg' },
+            { src: 'assets/images/poster-damsel.jpg', destWebp: 'poster-damsel.webp', destFallback: 'poster-damsel.jpg', w: 800, h: 1200, ratio: 2/3, mime: 'image/jpeg' },
+            { src: 'assets/images/poster-enola-holmes-2.png', destWebp: 'poster-enola-holmes-2.webp', destFallback: 'poster-enola-holmes-2.png', w: 800, h: 1200, ratio: 2/3, mime: 'image/png' },
+            { src: 'assets/images/poster-godzilla-kotm.png', destWebp: 'poster-godzilla-kotm.webp', destFallback: 'poster-godzilla-kotm.png', w: 800, h: 1200, ratio: 2/3, mime: 'image/png' },
+            { src: 'assets/images/poster-godzilla-vs-kong.png', destWebp: 'poster-godzilla-vs-kong.webp', destFallback: 'poster-godzilla-vs-kong.png', w: 800, h: 1200, ratio: 2/3, mime: 'image/png' }
+        ];
+
+        function blobToBase64(blob) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onloadend = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(blob);
+            });
+        }
+
+        function processImage(job) {
+            return new Promise((resolve, reject) => {
+                log(`Processing ${job.src}...`);
+                const img = new Image();
+                img.onload = async () => {
+                    try {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = job.w;
+                        canvas.height = job.h;
+                        const ctx = canvas.getContext('2d');
+
+                        const w = img.naturalWidth;
+                        const h = img.naturalHeight;
+                        const currentRatio = w / h;
+                        let cropX = 0, cropY = 0, cropW = w, cropH = h;
+
+                        if (currentRatio > job.ratio) {
+                            cropW = h * job.ratio;
+                            cropX = (w - cropW) / 2;
+                        } else if (currentRatio < job.ratio) {
+                            cropH = w / job.ratio;
+                            cropY = (h - cropH) / 2;
+                        }
+
+                        ctx.drawImage(img, cropX, cropY, cropW, cropH, 0, 0, job.w, job.h);
+
+                        // 1. Export WebP
+                        const webpBlob = await new Promise(r => canvas.toBlob(r, 'image/webp', 0.85));
+                        const webpBase64 = await blobToBase64(webpBlob);
+                        addResult(job.destWebp, webpBase64);
+                        log(`Generated WebP base64 for: ${job.destWebp}`, 'success');
+
+                        // 2. Export Fallback
+                        const fallbackBlob = await new Promise(r => canvas.toBlob(r, job.mime, 0.85));
+                        const fallbackBase64 = await blobToBase64(fallbackBlob);
+                        addResult(job.destFallback, fallbackBase64);
+                        log(`Generated Fallback base64 for: ${job.destFallback}`, 'success');
+
+                        resolve();
+                    } catch (err) {
+                        log(`Error processing ${job.src}: ${err.message}`, 'error');
+                        reject(err);
+                    }
+                };
+                img.onerror = () => {
+                    log(`Failed to load image: ${job.src}`, 'error');
+                    reject(new Error(`Load failed: ${job.src}`));
+                };
+                img.src = job.src;
+            });
+        }
+
+        async function run() {
+            for (const job of jobs) {
+                try {
+                    await processImage(job);
+                } catch (e) {
+                    log(`Job failed for ${job.src}`, 'error');
+                }
+            }
+            log("ALL CONVERSIONS DONE!", "success");
+            document.title = "CONVERSION_DONE";
+        }
+
+        setTimeout(run, 1000);
+    </script>
+</body>
+</html>
