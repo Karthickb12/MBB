@@ -290,6 +290,14 @@ body.light-theme .hero-title {
   font-size: 0.9rem;
   letter-spacing: 1px;
 }
+.stat-label-sub {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  margin-top: 0.15rem;
+  text-transform: none;
+  opacity: 0.75;
+}
 
 /* Section Common Styling */
 .section-padding {
@@ -1106,6 +1114,136 @@ textarea.form-control {
   }
   .navbar {
     padding: 1rem;
+  }
+}
+
+/* Mobile Hero Fixes (max-width: 767px) */
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    overflow: visible;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .hero-content {
+    padding: 1rem;
+    width: 100%;
+  }
+  #typewriter {
+    display: inline;
+    word-break: break-word;
+  }
+  .typed-cursor {
+    display: inline;
+    flex-shrink: 0;
+  }
+
+  /* Stats Bar Mobile Fixes */
+  .stat-item {
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.75rem;
+  }
+  .stat-num {
+    font-size: 2.2rem;
+  }
+  .stat-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    text-align: center;
+  }
+  .stat-label-sub {
+    font-size: 0.65rem;
+  }
+
+  /* ── Hero CTA Buttons: full-width equal stack ── */
+  .hero-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+  .hero-btns .btn {
+    width: 100%;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+  }
+
+  /* ── Section Padding Reduction ── */
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  /* ── Card Grid Gap Reduction ── */
+  #charactersGridContainer.row,
+  #filmographyGrid.row,
+  #pressNewsGrid.row,
+  #florenceGrid.row {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1rem;
+  }
+  .gallery-grid {
+    gap: 1rem;
+  }
+
+  /* ── Body/Paragraph Font Readability ── */
+  p, .bio-details p, .movie-desc, .florence-desc,
+  .unicef-editorial p, .press-news-desc, .accordion-body {
+    font-size: 0.9375rem; /* 15px */
+    line-height: 1.7;
+  }
+
+  /* ── Touch Targets: minimum 44×44px ── */
+  .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .play-btn-overlay {
+    width: 54px;
+    height: 54px;
+  }
+  .lightbox-btn {
+    width: 44px;
+    height: 44px;
+  }
+  .filter-btn {
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+  }
+  .video-close-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+  .theme-toggle-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Prevent horizontal overflow globally on mobile */
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
   }
 }
 
