@@ -55,9 +55,10 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero-section" id="home">
+  <section class="hero-section parallax-bg" id="home">
     <div class="hero-overlay"></div>
-    <div class="hero-content text-center text-white">
+    <div class="hero-content text-white" id="heroContentBlock">
+      <div class="hero-accent-line" id="heroAccentLine"></div>
       <h1 class="hero-title animate-on-scroll appear" id="heroMainTitle">MILLIE BOBBY <span>BROWN</span></h1>
       <p class="hero-subtitle" id="heroSubText">
         Actor • Producer • <span id="typewriter"></span><span class="typed-cursor">|</span>
@@ -68,6 +69,9 @@
       </div>
     </div>
   </section>
+
+  <!-- Cinematic Red Divider -->
+  <div class="section-divider-red animate-on-scroll" id="heroDivider"></div>
 
   <!-- Statistics Bar -->
   <section class="container stats-bar" id="statsSection">
@@ -100,25 +104,34 @@
   </section>
 
   <!-- Biography Section -->
-  <section class="section-padding container" id="bio">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-5 animate-on-scroll" id="bioImageCol">
-        <div class="bio-image-wrapper">
-          <img src="assets/images/bio-img.png" alt="Millie Bobby Brown professional portrait showcase" class="bio-img" id="bioPortraitImage" loading="lazy">
+  <section class="bio-section-editorial" id="bio">
+    <div class="bio-split-layout">
+      <!-- Left: Full-height Portrait -->
+      <div class="bio-image-side animate-on-scroll" id="bioImageCol">
+        <div class="bio-ken-burns-wrapper">
+          <img src="assets/images/ChatGPT Image Jun 25, 2026, 07_40_29 AM.png" alt="Millie Bobby Brown at The Electric State premiere in an embellished gold gown" class="bio-ken-burns-img" id="bioPortraitImage" loading="lazy">
         </div>
       </div>
-      <div class="col-lg-7 bio-details animate-on-scroll" id="bioTextCol">
-        <h2 class="section-title" id="bioTitle">Biography</h2>
-        <p class="section-subtitle" id="bioSub">Her journey from rising star to global powerhouse.</p>
-        <p>
-          Born on February 19, 2004, <span class="highlight-text">Millie Bobby Brown</span> is a British actress and producer who quickly became one of Hollywood's most prominent young talents. She rose to international fame for her breakout role as <span class="highlight-text">Eleven</span> in Netflix’s critically acclaimed science fiction series <span class="highlight-text">Stranger Things</span>, earning two Emmy Award nominations.
-        </p>
-        <p>
-          Beyond Hawkins, Millie has shown her versatility as a leading actress and producer. She starred as the titular character in the hit mystery films <span class="highlight-text">Enola Holmes</span> and its sequel, and took on the role of Princess Elodie in the dark fantasy action thriller <span class="highlight-text">Damsel</span>. 
-        </p>
-        <p>
-          In 2018, at just 14 years old, she was appointed the youngest-ever <span class="highlight-text">UNICEF Goodwill Ambassador</span>, using her global platform to advocate for children's rights, education, and anti-bullying awareness. In addition to her philanthropy and acting, she is the founder of <span class="highlight-text">Florence by Mills</span>, a clean and conscious beauty brand designed for Gen-Z.
-        </p>
+      <!-- Right: Text Content on Dark Panel -->
+      <div class="bio-text-side animate-on-scroll" id="bioTextCol">
+        <div class="bio-text-inner">
+          <h2 class="section-title" id="bioTitle">Biography</h2>
+          <p class="section-subtitle" id="bioSub">Her journey from rising star to global powerhouse.</p>
+          <!-- Editorial Pull-Quote -->
+          <blockquote class="bio-pull-quote" id="bioPullQuote">
+            "One of the youngest people ever to use fame as a force for good."
+          </blockquote>
+          <p>
+            Born on February 19, 2004, <span class="highlight-text">Millie Bobby Brown</span> is a British actress and producer who quickly became one of Hollywood's most prominent young talents. She rose to international fame for her breakout role as <span class="highlight-text">Eleven</span> in Netflix's critically acclaimed science fiction series <span class="highlight-text">Stranger Things</span>, earning two Emmy Award nominations.
+          </p>
+          <p>
+            Beyond Hawkins, Millie has shown her versatility as a leading actress and producer. She starred as the titular character in the hit mystery films <span class="highlight-text">Enola Holmes</span> and its sequel, and took on the role of Princess Elodie in the dark fantasy action thriller <span class="highlight-text">Damsel</span>.
+          </p>
+          <p>
+            In 2018, at just 14 years old, she was appointed the youngest-ever <span class="highlight-text">UNICEF Goodwill Ambassador</span>, using her global platform to advocate for children's rights, education, and anti-bullying awareness. In addition to her philanthropy and acting, she is the founder of <span class="highlight-text">Florence by Mills</span>, a clean and conscious beauty brand designed for Gen-Z.
+          </p>
+          <a href="#" class="btn btn-presskit mt-3" id="btnPressKit"><i class="fa-solid fa-file-arrow-down me-2"></i>Download Press Kit</a>
+        </div>
       </div>
     </div>
   </section>
@@ -213,7 +226,7 @@
   </section>
 
   <!-- Characters Section -->
-  <section class="section-padding bg-secondary-wrap" id="characters" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+  <section class="section-padding bg-secondary-wrap clip-diagonal" id="characters">
     <div class="container">
       <div class="text-center animate-on-scroll" id="charactersHeader">
         <h2 class="section-title">Iconic Characters</h2>
@@ -397,7 +410,7 @@
     </div>
   </section>
 
-  <section class="section-padding bg-secondary-wrap" id="gallery" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+  <section class="section-padding bg-secondary-wrap clip-diagonal-reverse" id="gallery">
     <div class="container">
       <div class="text-center animate-on-scroll" id="galleryHeader">
         <h2 class="section-title">Photo Gallery</h2>

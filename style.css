@@ -162,20 +162,20 @@ a:hover {
   height: 100vh;
   min-height: 600px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), 
-              url('assets/images/ChatGPT Image Jun 9, 2026, 01_11_10 AM.png') no-repeat center center;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background: url('assets/images/ChatGPT Image Jun 9, 2026, 01_11_10 AM.png') no-repeat center center;
   background-size: cover;
+  filter: brightness(1.08);
   color: #fff;
-  text-align: center;
+  text-align: left;
   overflow: hidden;
   transition: background 0.5s ease-in-out;
 }
 body.light-theme .hero-section {
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.7) 100%), 
-              url('assets/images/ChatGPT Image Jun 9, 2026, 01_11_10 AM.png') no-repeat center center;
+  background: url('assets/images/ChatGPT Image Jun 9, 2026, 01_11_10 AM.png') no-repeat center center;
   background-size: cover;
+  filter: brightness(1.1);
   color: #111827;
 }
 .hero-overlay {
@@ -184,7 +184,8 @@ body.light-theme .hero-section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, var(--bg-primary) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.7) 100%);
+  /* Cinematic: only bottom 30% fades to black, top is transparent so subject is clearly visible */
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.1) 60%, transparent 100%);
   z-index: 1;
 }
 body.light-theme .hero-overlay {
@@ -194,7 +195,17 @@ body.light-theme .hero-overlay {
   position: relative;
   z-index: 2;
   max-width: 800px;
-  padding: 2rem;
+  padding: 3rem 4rem;
+  /* Editorial: bottom-left positioned */
+}
+
+/* Red accent line above name */
+.hero-accent-line {
+  width: 60px;
+  height: 2px;
+  background-color: var(--accent-color);
+  margin-bottom: 1.2rem;
+  box-shadow: 0 0 8px var(--accent-glow);
 }
 .hero-title {
   font-size: 4.5rem;
@@ -1827,4 +1838,366 @@ body.light-theme .source-vogue {
 
 .press-news-link:hover i {
   transform: translateX(5px);
+}
+
+/* =================================================================
+   CINEMATIC & EDITORIAL REDESIGN — All 5 Prompts
+   ================================================================= */
+
+/* ---- Prompt 1: Hero Mobile Fix ---- */
+@media (max-width: 767px) {
+  .hero-content {
+    padding: 2rem 1.5rem;
+  }
+  .hero-accent-line {
+    width: 40px;
+  }
+}
+
+/* ---- Prompt 2: Cinematic Section Divider ---- */
+.section-divider-red {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent-color) 30%, var(--accent-color) 70%, transparent);
+  margin: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.section-divider-red.appear {
+  opacity: 1;
+}
+
+/* ---- Prompt 2: Diagonal Clip-Path Section Transitions ---- */
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 96%);
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-color: var(--bg-secondary);
+  margin: 0;
+  border: none !important;
+}
+.clip-diagonal-reverse {
+  clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-color: var(--bg-secondary);
+  margin: 0;
+  border: none !important;
+}
+@media (max-width: 767px) {
+  .clip-diagonal,
+  .clip-diagonal-reverse {
+    clip-path: none;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* ---- Prompt 3: Editorial Biography Section ---- */
+.bio-section-editorial {
+  position: relative;
+  overflow: hidden;
+}
+.bio-split-layout {
+  display: flex;
+  min-height: 85vh;
+  align-items: stretch;
+}
+.bio-image-side {
+  flex: 0 0 55%;
+  position: relative;
+  overflow: hidden;
+}
+.bio-ken-burns-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.bio-ken-burns-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  animation: kenBurns 10s ease-in-out infinite alternate;
+}
+@keyframes kenBurns {
+  0%   { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.06) translate(-1%, 1%); }
+}
+.bio-text-side {
+  flex: 0 0 45%;
+  background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.bio-text-inner {
+  padding: 4rem 3.5rem;
+}
+.bio-text-inner p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* Editorial Pull-Quote */
+.bio-pull-quote {
+  border-left: 4px solid var(--accent-color);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0 2rem 0;
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.55;
+  background: rgba(229, 9, 20, 0.04);
+  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+}
+body.light-theme .bio-pull-quote {
+  background: rgba(201, 8, 18, 0.04);
+}
+
+/* Press Kit Button */
+.btn-presskit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--accent-color) !important;
+  border: 1.5px solid var(--accent-color);
+  padding: 0.7rem 1.8rem;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-speed) ease;
+}
+.btn-presskit:hover {
+  background-color: var(--accent-color);
+  color: #fff !important;
+  box-shadow: 0 0 16px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Bio section responsive stacking */
+@media (max-width: 991px) {
+  .bio-split-layout {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .bio-image-side {
+    flex: none;
+    height: 55vh;
+    position: relative;
+  }
+  .bio-ken-burns-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  .bio-ken-burns-img {
+    position: absolute;
+    top: 0; left: 0;
+  }
+  .bio-text-side {
+    flex: none;
+  }
+  .bio-text-inner {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+/* ---- Prompt 4: Cinematic Filmography Cards ---- */
+.movie-card {
+  position: relative !important;
+  border-radius: var(--border-radius-lg) !important;
+  overflow: hidden !important;
+  min-height: 420px !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  border: 1px solid var(--border-color) !important;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, border-color var(--transition-speed) ease !important;
+  background: #111 !important;
+}
+.movie-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-color);
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease;
+  z-index: 5;
+}
+.movie-card:hover::before {
+  opacity: 1;
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+.movie-card:hover {
+  transform: translateY(-6px) scale(1.01) !important;
+  box-shadow: 0 14px 40px var(--shadow-glow) !important;
+  border-color: var(--accent-color) !important;
+}
+.movie-poster-wrap {
+  position: absolute !important;
+  inset: 0 !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  background: #111 !important;
+  z-index: 0 !important;
+}
+.movie-poster-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.5s ease !important;
+}
+.movie-card:hover .movie-poster-wrap img {
+  transform: scale(1.05) !important;
+}
+.movie-poster-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0.1) 100%);
+  z-index: 1;
+}
+.movie-year-badge {
+  position: absolute;
+  top: 15px; right: 15px;
+  background-color: rgba(0,0,0,0.85);
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid var(--accent-color);
+  z-index: 3;
+}
+.movie-info {
+  position: relative !important;
+  z-index: 2 !important;
+  margin-top: auto !important;
+  padding: 1.5rem !important;
+  color: #fff !important;
+}
+.movie-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.4rem !important;
+  color: #fff !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8) !important;
+}
+.movie-role {
+  font-size: 0.9rem !important;
+  color: var(--accent-color) !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+}
+.movie-desc {
+  color: rgba(255,255,255,0.72) !important;
+  font-size: 0.88rem !important;
+  line-height: 1.6 !important;
+}
+
+/* ---- Prompt 4: Text-only filmography filter buttons ---- */
+#filmographyFilters .filter-btn {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: var(--text-secondary);
+  padding: 0.4rem 0.3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition-speed) ease;
+  box-shadow: none !important;
+  margin: 0 0.8rem;
+}
+#filmographyFilters .filter-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width var(--transition-speed) ease;
+}
+#filmographyFilters .filter-btn:hover,
+#filmographyFilters .filter-btn.active {
+  color: var(--text-primary) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+#filmographyFilters .filter-btn.active::after,
+#filmographyFilters .filter-btn:hover::after {
+  width: 100%;
+}
+
+/* ---- Prompt 5: Editorial Typography & Whitespace ---- */
+
+/* Increased section padding */
+.section-padding {
+  padding: 120px 0 !important;
+}
+@media (max-width: 767px) {
+  .section-padding {
+    padding: 80px 0 !important;
+  }
+}
+
+/* Section title letter-spacing & centred red underline */
+.section-title {
+  letter-spacing: 0.08em;
+}
+.section-title::after {
+  width: 40px;
+  height: 3px;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+/* Left-aligned accent for certain sections */
+#bio .section-title::after,
+#filmography .section-title::after,
+#awards .section-title::after,
+#contact .section-title::after {
+  left: 0;
+  transform: none;
+}
+
+/* Section subtitle: uppercase, tracked, muted */
+.section-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+  max-width: 600px;
+}
+body.light-theme .section-subtitle {
+  color: rgba(17, 24, 39, 0.42);
+}
+
+/* Global line-height upgrade */
+p, li {
+  line-height: 1.8;
+}
+
+/* Scroll-reveal: refined translateY fade-up */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animate-on-scroll.appear {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -620,3 +620,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// ==========================================
+// Prompt 2: Parallax scroll for hero section
+// ==========================================
+(function initParallax() {
+  const parallaxEls = document.querySelectorAll('.parallax-bg');
+  if (!parallaxEls.length) return;
+  function updateParallax() {
+    const scrollY = window.pageYOffset;
+    parallaxEls.forEach(function(el) {
+      var offset = Math.round(scrollY * 0.6);
+      el.style.backgroundPositionY = 'calc(center + ' + offset + 'px)';
+    });
+  }
+  window.addEventListener('scroll', updateParallax, { passive: true });
+  updateParallax();
+}());
