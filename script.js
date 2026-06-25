@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   // 5. Filmography Item Filtering
   // ==========================================
-  const filterButtons = document.querySelectorAll('.filter-btn');
+  const filterButtons = document.querySelectorAll('#filmographyFilters .filter-btn');
   const filmItems = document.querySelectorAll('.film-item');
 
   filterButtons.forEach(btn => {
@@ -191,6 +191,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Ensure film items have basic styles for transition
   filmItems.forEach(item => {
+    item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    item.style.opacity = '1';
+    item.style.transform = 'translateY(0) scale(1)';
+  });
+
+  // ==========================================
+  // 5b. Trailer Item Filtering
+  // ==========================================
+  const trailerFilterButtons = document.querySelectorAll('.trailer-filter-btn');
+  const trailerItems = document.querySelectorAll('.trailer-item');
+
+  trailerFilterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Toggle button highlight
+      trailerFilterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterVal = btn.getAttribute('data-filter');
+
+      trailerItems.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        if (filterVal === 'all' || itemCat === filterVal) {
+          item.style.display = 'block';
+          // Force layout reflow to trigger CSS transition
+          item.offsetHeight; 
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0) scale(1)';
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(20px) scale(0.95)';
+          // Delay display setting to wait for opacity fadeout
+          setTimeout(() => {
+            if (item.style.opacity === '0') {
+              item.style.display = 'none';
+            }
+          }, 300);
+        }
+      });
+    });
+  });
+
+  // Ensure trailer items have basic styles for transition
+  trailerItems.forEach(item => {
     item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
     item.style.opacity = '1';
     item.style.transform = 'translateY(0) scale(1)';

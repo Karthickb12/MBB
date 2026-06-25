@@ -165,7 +165,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), 
-              url('assets/images/hero-bg.jpg') no-repeat center center;
+              url('assets/images/ChatGPT Image Jun 9, 2026, 01_11_10 AM.png') no-repeat center center;
   background-size: cover;
   color: #fff;
   text-align: center;
@@ -174,7 +174,7 @@ a:hover {
 }
 body.light-theme .hero-section {
   background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.7) 100%), 
-              url('assets/images/hero-bg.jpg') no-repeat center center;
+              url('assets/images/ChatGPT Image Jun 9, 2026, 01_11_10 AM.png') no-repeat center center;
   background-size: cover;
   color: #111827;
 }
